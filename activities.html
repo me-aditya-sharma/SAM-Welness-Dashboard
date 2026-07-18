@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wellness Activities — Mental Marvels</title>
+<meta name="description" content="Guided breathing, meditation, journaling, and gentle movement activities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   MindBloom — shared design system
+   ============================================================ */
+:root{
+  --lavender:#C9B6F2; --sky:#9BB8F0; --skylight:#BFE3F5;
+  --pink:#F5A9D0; --pink-deep:#E06BB0;
+  --yellow:#F5D06B; --yellow-deep:#E0A93D;
+  --green:#A8C68A; --green-deep:#6E9A4E;
+  --periwinkle:#8FB4F0;
+  --cream:#FFF9EE; --cream2:#FDF6EC;
+  --orange:#FF8A3D; --orange-bg:#F3ECDD;
+  --ink-purple:#3D2C6B; --ink-magenta:#7A2E8C; --ink-teal:#1E5F5A;
+  --radius-lg:32px; --radius-md:24px; --radius-sm:16px;
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:32px; --space-5:48px; --space-6:64px; --space-7:96px;
+  --font-display:'Fredoka', sans-serif; --font-body:'Quicksand', sans-serif;
+  --shadow-soft: 0 20px 45px -18px rgba(61,44,107,0.28);
+  --shadow-card: 0 14px 30px -12px rgba(61,44,107,0.22);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; font-family:var(--font-body); color:var(--ink-purple);
+  background:linear-gradient(180deg, var(--lavender) 0%, var(--sky) 45%, var(--skylight) 100%);
+  overflow-x:hidden; cursor:none; min-height:100vh;
+  transition:background .4s ease, color .4s ease;
+}
+
+/* ---------- Dark mode ---------- */
+:root[data-theme="dark"]{
+  --lavender:#221A3D; --sky:#1B2340; --skylight:#182A33;
+  --pink:#3A2338; --pink-deep:#F2A6D6;
+  --yellow:#3A311C; --yellow-deep:#F0C25E;
+  --green:#1E2A1B; --green-deep:#9FD17A;
+  --periwinkle:#22283F;
+  --cream:#171326; --cream2:#1C1830;
+  --orange:#3A2413; --orange-bg:#20181C;
+  --ink-purple:#EFE9FB; --ink-magenta:#F2A6D6; --ink-teal:#8FE3D8;
+  --shadow-soft: 0 20px 45px -18px rgba(0,0,0,0.55);
+  --shadow-card: 0 14px 30px -12px rgba(0,0,0,0.5);
+}
+:root[data-theme="dark"] body{ background:linear-gradient(180deg, #17132A 0%, #141C33 45%, #101B22 100%); }
+:root[data-theme="dark"] .glass-card{ background:rgba(28,24,48,.75); border-color:rgba(255,255,255,.08); }
+:root[data-theme="dark"] header.nav{ background:rgba(23,19,38,.7); border-bottom-color:rgba(255,255,255,.08); }
+:root[data-theme="dark"] .mobile-menu{ background:rgba(23,19,38,.96); }
+:root[data-theme="dark"] .day-cell, :root[data-theme="dark"] .mood-chip, :root[data-theme="dark"] .filter-chip,
+:root[data-theme="dark"] .tab-btn, :root[data-theme="dark"] .history-list li, :root[data-theme="dark"] .entry,
+:root[data-theme="dark"] .search-row input{ background:#241E3B; color:var(--ink-purple); }
+:root[data-theme="dark"] .nav-cta{ background:var(--ink-magenta); color:#171326; }
+:root[data-theme="dark"] .h-card{ color:#171326; }
+
+.theme-toggle{ background:rgba(255,255,255,.5); border:none; width:40px; height:40px; border-radius:50%; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+:root[data-theme="dark"] .theme-toggle{ background:rgba(255,255,255,.1); }
+@media (hover:none), (pointer:coarse){ body{cursor:auto;} }
+h1,h2,h3,h4{font-family:var(--font-display); margin:0; line-height:1.1;}
+p{margin:0; line-height:1.55;}
+a{color:inherit;}
+button{font-family:var(--font-body);}
+img,svg{display:block; max-width:100%;}
+section{position:relative; padding:var(--space-7) var(--space-4); z-index:2;}
+.wrap{max-width:1180px; margin:0 auto; position:relative; z-index:2;}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  font-size:.78rem; background:rgba(255,255,255,.55); padding:6px 16px; border-radius:999px; backdrop-filter:blur(6px);
+}
+.section-head{max-width:640px; margin-bottom:var(--space-5);}
+.section-head h2{font-size:clamp(2rem,3.4vw,2.8rem); margin-top:var(--space-2);}
+.section-head p{margin-top:var(--space-2); font-size:1.05rem; opacity:.85;}
+.page-hero{padding-top:var(--space-6); padding-bottom:var(--space-4); text-align:center;}
+.page-hero h1{font-size:clamp(2.2rem,4.4vw,3.4rem);}
+.page-hero p{max-width:560px; margin:var(--space-2) auto 0; font-size:1.08rem; opacity:.85;}
+
+/* ---------- Accessibility ---------- */
+.skip-link{position:absolute; left:-999px; top:0; background:var(--cream); color:var(--ink-purple); padding:12px 20px; border-radius:0 0 12px 0; z-index:999; font-weight:700;}
+.skip-link:focus{left:0;}
+:focus-visible{outline:3px solid var(--ink-magenta); outline-offset:3px; border-radius:8px;}
+.visually-hidden{position:absolute; left:-9999px;}
+
+/* ---------- Custom cursor ---------- */
+#cursor-dot,#cursor-ring{position:fixed; top:0; left:0; pointer-events:none; z-index:9999; border-radius:50%; transform:translate(-50%,-50%);}
+#cursor-dot{width:10px; height:10px; background:var(--ink-magenta); transition:background .25s ease;}
+#cursor-ring{width:38px; height:38px; border:2.5px solid var(--pink-deep); transition:background .25s ease, border-color .25s ease, width .2s ease, height .2s ease;}
+@media (hover:none), (pointer:coarse){ #cursor-dot,#cursor-ring{display:none;} }
+#cursor-canvas{position:fixed; inset:0; pointer-events:none; z-index:9998;}
+
+/* ---------- Page transition veil ---------- */
+#page-veil{
+  position:fixed; inset:0; z-index:10000; pointer-events:none;
+  background:linear-gradient(135deg,var(--pink-deep),var(--orange));
+  clip-path:circle(0% at 50% 50%); transition:clip-path .55s cubic-bezier(.7,0,.3,1);
+}
+#page-veil.active{clip-path:circle(150% at 50% 50%);}
+::view-transition-old(root){animation:fadeOut .3s ease both;}
+::view-transition-new(root){animation:fadeIn .35s ease both;}
+@keyframes fadeOut{to{opacity:0; transform:scale(.99);}}
+@keyframes fadeIn{from{opacity:0; transform:scale(1.01);}}
+
+/* ---------- Nav ---------- */
+header.nav{
+  position:sticky; top:0; z-index:100; padding:14px var(--space-4);
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(255,249,238,0.6); backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,255,255,.5);
+}
+.brand{display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; font-size:1.3rem; text-decoration:none;}
+.brand .dot{width:14px; height:14px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff, var(--pink-deep));}
+nav.links{display:flex; gap:var(--space-3); list-style:none; margin:0; padding:0;}
+nav.links a{text-decoration:none; font-weight:600; font-size:.95rem; padding:8px 4px; position:relative;}
+nav.links a::after{content:""; position:absolute; left:0; bottom:-2px; width:0; height:3px; border-radius:3px; background:linear-gradient(90deg,var(--pink-deep),var(--orange)); transition:width .25s ease;}
+nav.links a:hover::after, nav.links a:focus::after, nav.links a[aria-current="page"]::after{width:100%;}
+nav.links a[aria-current="page"]{opacity:1; font-weight:800;}
+.nav-cta{background:var(--ink-purple); color:var(--cream); border:none; padding:10px 22px; border-radius:999px; font-weight:700; cursor:none; text-decoration:none; display:inline-block;}
+@media (hover:none),(pointer:coarse){ .nav-cta{cursor:pointer;} }
+.nav-toggle{display:none; background:none; border:none; font-size:1.6rem; cursor:pointer; color:var(--ink-purple);}
+.mobile-menu{display:none; flex-direction:column; gap:6px; padding:var(--space-2) var(--space-4); background:rgba(255,249,238,.96); backdrop-filter:blur(14px);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{text-decoration:none; font-weight:700; padding:10px 0; border-bottom:1px solid rgba(61,44,107,.08);}
+@media (max-width:860px){ nav.links{display:none;} .nav-toggle{display:block;} }
+
+/* ---------- Buttons ---------- */
+.btn-primary,.btn-secondary{
+  padding:16px 30px; border-radius:999px; font-weight:700; font-size:1rem; border:none; cursor:none;
+  display:inline-flex; align-items:center; gap:8px; transition:transform .25s ease, box-shadow .25s ease;
+  text-decoration:none;
+}
+@media (hover:none),(pointer:coarse){ .btn-primary,.btn-secondary{cursor:pointer;} }
+.btn-primary{background:linear-gradient(135deg,var(--pink-deep),var(--orange)); color:#fff; box-shadow:var(--shadow-soft);}
+.btn-primary:hover{transform:translateY(-3px) scale(1.03);}
+.btn-secondary{background:rgba(255,255,255,.6); color:var(--ink-purple); backdrop-filter:blur(6px);}
+.btn-secondary:hover{background:#fff;}
+.btn-primary:active,.btn-secondary:active{transform:scale(.96);}
+
+/* ---------- Cards / reveal ---------- */
+.glass-card{background:rgba(255,249,238,.75); backdrop-filter:blur(10px); border-radius:var(--radius-lg); box-shadow:var(--shadow-card); border:1px solid rgba(255,255,255,.6);}
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+.tilt{transition:transform .25s ease;}
+
+/* ---------- Ambient blobs ---------- */
+.blob-field{position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:1;}
+.blob{position:absolute; filter:drop-shadow(0 18px 30px rgba(61,44,107,.22)); will-change:transform;}
+@keyframes drift1{0%{transform:translate(0,0) rotate(0deg);}50%{transform:translate(18px,-26px) rotate(8deg);}100%{transform:translate(0,0) rotate(0deg);}}
+@keyframes drift2{0%{transform:translate(0,0) rotate(0deg);}50%{transform:translate(-22px,20px) rotate(-10deg);}100%{transform:translate(0,0) rotate(0deg);}}
+@keyframes drift3{0%{transform:translate(0,0) rotate(0deg);}50%{transform:translate(14px,24px) rotate(6deg);}100%{transform:translate(0,0) rotate(0deg);}}
+
+/* ---------- Counters ---------- */
+.stat-row{display:flex; gap:var(--space-4); flex-wrap:wrap; justify-content:center;}
+.stat-row div strong{display:block; font-family:var(--font-display); font-size:1.6rem;}
+.stat-row div span{font-size:.85rem; opacity:.7;}
+
+/* ---------- Phone mockup (home hero) ---------- */
+.phone-wrap{display:flex; justify-content:center; position:relative;}
+.phone{width:320px; background:var(--cream); border-radius:44px; padding:18px; box-shadow:var(--shadow-soft); border:6px solid #fff; position:relative; z-index:3; animation:floaty 7s ease-in-out infinite;}
+@keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+.phone-status{display:flex; justify-content:space-between; font-size:.75rem; font-weight:700; padding:0 6px;}
+.phone-notch{width:90px; height:22px; background:#111; opacity:.06; border-radius:14px; margin:6px auto 10px;}
+.phone-greet{font-size:1.05rem; font-weight:600; padding:0 6px;}
+.score-row{display:flex; align-items:baseline; gap:8px; padding:6px 6px 2px;}
+.score-num{font-family:var(--font-display); font-size:3.4rem; font-weight:700;}
+.score-spark{color:var(--pink-deep); font-size:1.4rem;}
+.score-label{font-size:.78rem; opacity:.65; padding:0 6px 10px;}
+.quick-pills{display:flex; gap:8px; padding:0 6px 14px;}
+.quick-pills span{background:var(--ink-purple); color:#fff; font-size:.72rem; font-weight:700; padding:8px 14px; border-radius:999px; display:flex; align-items:center; gap:6px;}
+.quick-pills span.ghost{background:rgba(61,44,107,.08); color:var(--ink-purple);}
+.highlights-title{display:flex; justify-content:space-between; padding:4px 6px 8px; font-size:.85rem; font-weight:700;}
+.highlights-title small{font-weight:500; opacity:.55; font-size:.7rem;}
+.highlights-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:0 4px;}
+.h-card{border-radius:20px; padding:14px; font-weight:700; font-size:.8rem; display:flex; flex-direction:column; gap:20px; min-height:74px;}
+.h-card .n{font-family:var(--font-display); font-size:1.15rem;}
+.h-card.pills{background:radial-gradient(circle at 25% 20%, #fff, var(--periwinkle));}
+.h-card.water{background:radial-gradient(circle at 25% 20%, #fff, var(--skylight));}
+.h-card.habits{background:radial-gradient(circle at 25% 20%, #fff, var(--green));}
+.h-card.heart{background:radial-gradient(circle at 25% 20%, #fff, var(--pink));}
+.h-card.mind{background:radial-gradient(circle at 25% 20%, #fff, var(--lavender));}
+.h-card.sleep{background:radial-gradient(circle at 25% 20%, #fff, var(--yellow));}
+.phone-tab{display:flex; justify-content:space-around; margin-top:14px; padding:12px 6px 2px; border-top:1px solid rgba(61,44,107,.08);}
+.phone-tab .plus{width:40px; height:40px; border-radius:50%; background:var(--ink-purple); color:#fff; display:flex; align-items:center; justify-content:center; margin-top:-30px; box-shadow:0 8px 18px rgba(61,44,107,.4);}
+
+/* ---------- Mood page ---------- */
+.mood-layout{display:grid; grid-template-columns:.9fr 1.5fr; gap:var(--space-4); align-items:start;}
+.mascot-card{padding:var(--space-4); text-align:center;}
+.mood-chip-row{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:var(--space-3);}
+.mood-chip{border:2px solid transparent; background:#fff; padding:10px 16px; border-radius:999px; font-weight:700; display:flex; align-items:center; gap:6px; cursor:none; font-size:.9rem; transition:all .2s ease;}
+@media (hover:none),(pointer:coarse){ .mood-chip{cursor:pointer;} }
+.mood-chip[aria-pressed="true"]{border-color:var(--orange); background:var(--orange-bg); transform:translateY(-2px);}
+.mood-note{width:100%; margin-top:var(--space-2); border-radius:16px; border:1px solid rgba(61,44,107,.15); padding:12px; font-family:var(--font-body); resize:vertical; min-height:70px;}
+.mood-right{display:flex; flex-direction:column; gap:var(--space-3);}
+.tab-row{display:flex; gap:8px;}
+.tab-btn{background:#fff; border:none; padding:10px 20px; border-radius:999px; font-weight:700; cursor:none; opacity:.55;}
+@media (hover:none),(pointer:coarse){ .tab-btn{cursor:pointer;} }
+.tab-btn[aria-selected="true"]{opacity:1; background:var(--orange); color:#fff;}
+.calendar{padding:var(--space-3);}
+.calendar-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:var(--space-2);}
+.calendar-grid .dow{font-size:.72rem; font-weight:700; text-align:center; opacity:.55;}
+.day-cell{aspect-ratio:1; border-radius:12px; background:#fff; border:none; font-weight:700; font-size:.85rem; cursor:none; transition:transform .15s ease;}
+@media (hover:none),(pointer:coarse){ .day-cell{cursor:pointer;} }
+.day-cell:hover{transform:scale(1.08);}
+.day-cell.logged{color:#fff;}
+.stat-cards{display:grid; grid-template-columns:1fr 1fr; gap:var(--space-3);}
+.stat-card{padding:var(--space-3); color:#fff; position:relative; overflow:hidden;}
+.stat-card h4{font-size:.85rem; opacity:.9; font-weight:700;}
+.stat-card .big{font-family:var(--font-display); font-size:1.8rem; margin-top:4px;}
+.stat-card.orange{background:linear-gradient(135deg,var(--orange),var(--yellow-deep));}
+.stat-card.purple{background:linear-gradient(135deg,var(--ink-purple),var(--pink-deep));}
+.stat-card.teal{background:linear-gradient(135deg,var(--ink-teal),var(--green-deep));}
+.gauge-wrap{grid-column:1/-1; padding:var(--space-3); display:flex; align-items:center; gap:var(--space-3); flex-wrap:wrap;}
+.history-list{list-style:none; margin:var(--space-2) 0 0; padding:0; display:flex; flex-direction:column; gap:10px; max-height:260px; overflow:auto;}
+.history-list li{display:flex; justify-content:space-between; align-items:center; background:#fff; border-radius:14px; padding:10px 14px; font-size:.88rem; font-weight:600;}
+.history-list button{background:none; border:none; opacity:.4; cursor:pointer; font-size:.85rem;}
+.history-list button:hover{opacity:1;}
+.empty-state{text-align:center; opacity:.6; padding:var(--space-3); font-size:.9rem;}
+
+/* ---------- Activities page ---------- */
+.filter-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:var(--space-4);}
+.filter-chip{background:#fff; border:none; padding:10px 18px; border-radius:999px; font-weight:700; cursor:none; font-size:.88rem; opacity:.6; transition:all .2s ease;}
+@media (hover:none),(pointer:coarse){ .filter-chip{cursor:pointer;} }
+.filter-chip[aria-pressed="true"]{opacity:1; background:var(--ink-purple); color:#fff;}
+.activity-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-3);}
+.activity-card{padding:var(--space-3); display:flex; flex-direction:column; gap:var(--space-2);}
+.activity-icon{width:56px; height:56px; border-radius:18px; display:flex; align-items:center; justify-content:center; font-size:1.6rem;}
+.activity-card h3{font-size:1.1rem;}
+.activity-card .duration{font-size:.78rem; font-weight:700; opacity:.6;}
+.activity-card button{margin-top:auto; align-self:flex-start; background:var(--ink-purple); color:#fff; border:none; padding:10px 18px; border-radius:999px; font-weight:700; cursor:none;}
+@media (hover:none),(pointer:coarse){ .activity-card button{cursor:pointer;} }
+.breathing{margin-top:var(--space-5); display:grid; grid-template-columns:1fr 1fr; gap:var(--space-4); align-items:center; padding:var(--space-4);}
+.breath-circle-wrap{display:flex; justify-content:center;}
+.breath-circle{width:180px; height:180px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #fff, var(--periwinkle)); display:flex; align-items:center; justify-content:center; font-weight:700; font-family:var(--font-display); font-size:1.1rem; box-shadow:0 0 0 14px rgba(143,180,240,.25); transition:transform 4s ease-in-out;}
+.breath-controls{display:flex; gap:var(--space-2); margin-top:var(--space-3); flex-wrap:wrap;}
+.journal-box{padding:var(--space-4); margin-top:var(--space-5);}
+.journal-box textarea{width:100%; min-height:120px; border-radius:18px; border:1px solid rgba(61,44,107,.15); padding:14px; font-family:var(--font-body); font-size:1rem; resize:vertical; margin-top:var(--space-2);}
+.journal-entries{margin-top:var(--space-3); display:flex; flex-direction:column; gap:10px;}
+.journal-entries .entry{background:#fff; border-radius:14px; padding:12px 16px; font-size:.9rem;}
+.journal-entries .entry time{display:block; font-size:.72rem; opacity:.55; font-weight:700; margin-bottom:4px;}
+.sound-toggle{display:flex; align-items:center; gap:12px; margin-top:var(--space-4); padding:var(--space-3); border-radius:var(--radius-md);}
+.switch{position:relative; width:52px; height:28px; background:rgba(61,44,107,.15); border-radius:999px; border:none; cursor:pointer;}
+.switch::after{content:""; position:absolute; top:3px; left:3px; width:22px; height:22px; background:#fff; border-radius:50%; transition:transform .25s ease; box-shadow:0 2px 6px rgba(0,0,0,.2);}
+.switch[aria-checked="true"]{background:var(--orange);}
+.switch[aria-checked="true"]::after{transform:translateX(24px);}
+
+/* ---------- Support page ---------- */
+.support-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-3);}
+.support-card{padding:var(--space-3); text-align:left;}
+.support-card .badge{width:48px; height:48px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:var(--space-2);}
+.crisis-note{margin-top:var(--space-4); padding:var(--space-3); border-radius:var(--radius-md); background:rgba(255,255,255,.7); border:2px dashed var(--ink-magenta); font-weight:600; font-size:.95rem;}
+.faq{max-width:760px; margin:0 auto;}
+.faq-item{border-radius:var(--radius-md); margin-bottom:12px; overflow:hidden;}
+.faq-q{width:100%; text-align:left; background:none; border:none; padding:var(--space-3); font-weight:700; font-size:1rem; cursor:none; display:flex; justify-content:space-between; align-items:center;}
+@media (hover:none),(pointer:coarse){ .faq-q{cursor:pointer;} }
+.faq-q .icon{transition:transform .3s ease;}
+.faq-item[data-open="true"] .icon{transform:rotate(45deg);}
+.faq-a{max-height:0; overflow:hidden; transition:max-height .35s ease; padding:0 var(--space-3);}
+.faq-item[data-open="true"] .faq-a{max-height:220px; padding-bottom:var(--space-3);}
+.search-row{display:flex; gap:10px; margin-bottom:var(--space-4); max-width:420px;}
+.search-row input{flex:1; padding:14px 18px; border-radius:999px; border:none; font-family:var(--font-body); font-size:.95rem; box-shadow:var(--shadow-card);}
+
+/* ---------- Insights page ---------- */
+.dash-card{padding:var(--space-3);}
+.dash-greet{display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-4); flex-wrap:wrap; gap:var(--space-2);}
+.bento{display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:auto; gap:var(--space-3);}
+.bento .c1{grid-column:span 2;}
+.bento .c2{grid-column:span 2;}
+.bento .c4{grid-column:span 4;}
+.dash-card h4{font-size:.95rem;}
+.dash-card p.sub{font-size:.75rem; opacity:.6; margin-top:2px;}
+.bar-row{display:flex; align-items:flex-end; gap:8px; height:110px; margin-top:var(--space-2);}
+.bar{flex:1; border-radius:8px 8px 0 0; height:0; transition:height 1s ease;}
+.timeline-list{list-style:none; margin:var(--space-2) 0 0; padding:0; display:flex; flex-direction:column; gap:10px;}
+.timeline-list li{display:flex; gap:10px; align-items:center; font-size:.88rem; font-weight:600;}
+.timeline-list .dot{width:10px; height:10px; border-radius:50%; flex-shrink:0;}
+.streak-banner{display:flex; align-items:center; gap:var(--space-3); padding:var(--space-3); border-radius:var(--radius-md); background:linear-gradient(135deg,var(--orange),var(--pink-deep)); color:#fff; margin-bottom:var(--space-3);}
+.streak-banner .num{font-family:var(--font-display); font-size:2.4rem;}
+
+/* ---------- Toasts ---------- */
+.toast-host{position:fixed; bottom:24px; left:50%; transform:translateX(-50%); z-index:10001; display:flex; flex-direction:column; gap:10px; align-items:center; pointer-events:none;}
+.toast{background:var(--ink-purple); color:var(--cream); padding:12px 22px; border-radius:999px; font-weight:700; font-size:.9rem; box-shadow:var(--shadow-soft); opacity:0; transform:translateY(14px); transition:opacity .3s ease, transform .3s ease;}
+.toast.in{opacity:1; transform:translateY(0);}
+.toast-badge{background:linear-gradient(135deg,var(--pink-deep),var(--orange)); color:#fff;}
+
+/* ---------- Confetti ---------- */
+.confetti-host{position:fixed; inset:0; pointer-events:none; z-index:10002; overflow:hidden;}
+.confetti-piece{position:absolute; top:40%; width:8px; height:14px; border-radius:2px; animation:confetti-fall 1.4s ease-out forwards;}
+@keyframes confetti-fall{
+  0%{transform:translate(0,0) rotate(0deg); opacity:1;}
+  100%{transform:translate(var(--dx), 220px) rotate(var(--rot)); opacity:0;}
+}
+
+/* ---------- Reminder banner ---------- */
+.reminder-banner{display:flex; align-items:center; justify-content:space-between; gap:var(--space-2); padding:var(--space-2) var(--space-3); margin-bottom:var(--space-3); flex-wrap:wrap;}
+
+/* ---------- Badges ---------- */
+.badge-grid{display:flex; flex-wrap:wrap; gap:12px; margin-top:var(--space-2);}
+.badge-pill{display:flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; background:#fff; font-weight:700; font-size:.85rem; box-shadow:var(--shadow-card);}
+.badge-pill.locked{opacity:.35; filter:grayscale(1);}
+:root[data-theme="dark"] .badge-pill{ background:#241E3B; }
+
+/* ---------- Mood tags ---------- */
+.tag-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:var(--space-2);}
+.tag-chip{background:#fff; border:2px solid transparent; padding:6px 14px; border-radius:999px; font-weight:700; font-size:.78rem; cursor:pointer; opacity:.6;}
+.tag-chip[aria-pressed="true"]{opacity:1; border-color:var(--periwinkle); background:var(--skylight);}
+:root[data-theme="dark"] .tag-chip{ background:#241E3B; color:var(--ink-purple); }
+.history-filters{display:flex; gap:10px; flex-wrap:wrap; margin:var(--space-2) 0;}
+.history-filters select, .history-filters input{padding:10px 14px; border-radius:999px; border:none; font-family:var(--font-body); font-size:.85rem; box-shadow:var(--shadow-card);}
+.entry-tags{display:inline-flex; gap:4px; margin-left:6px;}
+.entry-tag{font-size:.68rem; background:rgba(61,44,107,.08); padding:2px 8px; border-radius:999px; font-weight:700;}
+
+/* ---------- Dashboard range tabs & stat extras ---------- */
+.range-tabs{display:flex; gap:8px; margin-bottom:var(--space-3); flex-wrap:wrap;}
+.range-tabs button{background:#fff; border:none; padding:8px 18px; border-radius:999px; font-weight:700; opacity:.55; cursor:pointer; font-size:.85rem;}
+.range-tabs button[aria-selected="true"]{opacity:1; background:var(--ink-purple); color:#fff;}
+:root[data-theme="dark"] .range-tabs button{ background:#241E3B; color:var(--ink-purple); }
+.stat-mini-row{display:flex; gap:var(--space-2); flex-wrap:wrap; margin-bottom:var(--space-3);}
+.stat-mini{flex:1; min-width:130px; background:#fff; border-radius:var(--radius-md); padding:var(--space-2) var(--space-3); box-shadow:var(--shadow-card);}
+.stat-mini .big{font-family:var(--font-display); font-size:1.6rem;}
+.stat-mini .label{font-size:.72rem; opacity:.6; font-weight:700; text-transform:uppercase; letter-spacing:.04em;}
+:root[data-theme="dark"] .stat-mini{ background:#241E3B; }
+.empty-widget{text-align:center; padding:var(--space-3); opacity:.75;}
+.empty-widget .emoji{font-size:1.8rem; display:block; margin-bottom:8px;}
+.empty-widget a.btn-secondary{margin-top:var(--space-2); display:inline-flex;}
+
+/* ---------- Recommended activity card ---------- */
+.recommend-card{display:flex; align-items:center; gap:var(--space-3); padding:var(--space-3); margin-bottom:var(--space-4); background:linear-gradient(135deg, var(--periwinkle), var(--lavender));}
+:root[data-theme="dark"] .recommend-card{ background:linear-gradient(135deg,#2a2450,#1f2340); }
+.recommend-card .r-icon{font-size:2.2rem;}
+.recommend-card h4{font-size:.78rem; text-transform:uppercase; letter-spacing:.05em; opacity:.75;}
+.recommend-card p{font-size:.95rem; font-weight:700; margin-top:2px;}
+
+/* ---------- MindBloom Assistant chat widget ---------- */
+.chat-launcher{position:fixed; bottom:24px; right:24px; width:60px; height:60px; border-radius:50%; background:var(--ink-purple); color:#fff; border:none; font-size:1.5rem; box-shadow:var(--shadow-soft); cursor:pointer; z-index:500;}
+.chat-panel{position:fixed; bottom:96px; right:24px; width:320px; max-height:440px; display:none; flex-direction:column; z-index:500; overflow:hidden;}
+.chat-panel.open{display:flex;}
+.chat-head{padding:var(--space-2) var(--space-3); background:var(--ink-purple); color:#fff;}
+.chat-head strong{font-family:var(--font-display); font-size:1rem;}
+.chat-head p{font-size:.72rem; opacity:.85; margin-top:2px;}
+.chat-body{flex:1; overflow-y:auto; padding:var(--space-2); display:flex; flex-direction:column; gap:8px; background:#fff;}
+:root[data-theme="dark"] .chat-body{ background:#1C1830; }
+.chat-msg{max-width:85%; padding:10px 14px; border-radius:16px; font-size:.85rem; line-height:1.4;}
+.chat-msg.bot{align-self:flex-start; background:var(--skylight);}
+.chat-msg.user{align-self:flex-end; background:var(--ink-purple); color:#fff;}
+:root[data-theme="dark"] .chat-msg.bot{ background:#241E3B; }
+.chat-input-row{display:flex; gap:6px; padding:var(--space-2); background:#fff; border-top:1px solid rgba(61,44,107,.1);}
+:root[data-theme="dark"] .chat-input-row{ background:#1C1830; }
+.chat-input-row input{flex:1; border:none; border-radius:999px; padding:10px 14px; font-family:var(--font-body); background:var(--orange-bg);}
+.chat-input-row button{border:none; background:var(--ink-purple); color:#fff; border-radius:999px; padding:10px 16px; font-weight:700; cursor:pointer;}
+@media (max-width:480px){
+  .chat-panel{width:calc(100vw - 32px); right:16px;}
+  .chat-launcher{right:16px;}
+}
+
+/* ---------- Footer ---------- */
+footer{background:linear-gradient(180deg, var(--skylight), var(--yellow)); padding:var(--space-6) var(--space-4) var(--space-4);}
+.footer-inner{max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.3fr 1fr; gap:var(--space-5); align-items:start;}
+.footer-form{display:flex; gap:10px; margin-top:var(--space-3); flex-wrap:wrap;}
+.footer-form input{flex:1; min-width:220px; padding:14px 18px; border-radius:999px; border:none; font-family:var(--font-body); font-size:.95rem;}
+.footer-links{display:flex; gap:var(--space-5); flex-wrap:wrap;}
+.footer-links div h5{font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; margin-bottom:var(--space-2);}
+.footer-links a{display:block; text-decoration:none; font-size:.9rem; margin-bottom:8px; opacity:.85;}
+.fine-print{text-align:center; margin-top:var(--space-5); font-size:.8rem; opacity:.65;}
+
+/* ---------- Responsive ---------- */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr; text-align:center;}
+  .mood-layout{grid-template-columns:1fr;}
+  .activity-grid{grid-template-columns:1fr 1fr;}
+  .support-grid{grid-template-columns:1fr 1fr;}
+  .bento{grid-template-columns:1fr 1fr;}
+  .bento .c1,.bento .c2,.bento .c4{grid-column:span 2;}
+  .footer-inner{grid-template-columns:1fr;}
+  .breathing{grid-template-columns:1fr;}
+}
+@media (max-width:600px){
+  section{padding:var(--space-5) var(--space-2);}
+  .activity-grid{grid-template-columns:1fr;}
+  .support-grid{grid-template-columns:1fr;}
+  .bento{grid-template-columns:1fr;}
+  .bento .c1,.bento .c2,.bento .c4{grid-column:span 1;}
+  .phone{width:100%; max-width:320px;}
+  .stat-mini-row{flex-direction:column;}
+  .recommend-card{flex-direction:column; text-align:center;}
+  .dash-greet{flex-direction:column; align-items:flex-start;}
+}
+@media (max-width:768px){
+  .hero{grid-template-columns:1fr !important; text-align:center;}
+  .phone-wrap{order:-1; margin-bottom:var(--space-3);}
+}
+/* Ensure comfortable tap targets on touch devices */
+@media (hover:none), (pointer:coarse){
+  .mood-chip,.filter-chip,.tab-btn,.range-tabs button,.tag-chip,.day-cell,.theme-toggle,.chat-launcher,
+  .activity-card button,.btn-primary,.btn-secondary,.nav-cta,.switch{ min-height:44px; }
+  .day-cell{ min-width:44px; }
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+}
+
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#7A2E8C">
+<style>
+  body{background:linear-gradient(180deg, var(--orange-bg), var(--lavender));}
+</style>
+</head>
+<body>
+<div id="page-veil"></div>
+<a href="#main" class="skip-link">Skip to content</a>
+<canvas id="cursor-canvas" aria-hidden="true"></canvas>
+<div id="cursor-dot" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="brand" href="index.html" data-transition><span class="dot"></span> Mental Marvels</a>
+  <nav class="links" aria-label="Primary">
+    <a href="index.html" data-transition>Home</a>
+    <a href="mood.html" data-transition>Mood</a>
+    <a href="activities.html" aria-current="page" data-transition>Activities</a>
+    <a href="support.html" data-transition>Support</a>
+    <a href="insights.html" data-transition>Insights</a>
+  </nav>
+  <a class="nav-cta" href="mood.html" data-cursor-color="purple" data-transition>Start Check-In</a>
+  <a class="nav-cta" href="login.html" data-cursor-color="purple" data-transition>Login</a>
+  <button class="theme-toggle" aria-label="Switch to dark mode">🌙</button>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</header>
+<div class="mobile-menu" aria-label="Mobile navigation">
+  <a href="index.html" data-transition>Home</a>
+  <a href="mood.html" data-transition>Mood</a>
+  <a href="activities.html" data-transition>Activities</a>
+  <a href="support.html" data-transition>Support</a>
+  <a href="insights.html" data-transition>Insights</a>
+  <a href="login.html" data-transition>Login</a>
+</div>
+
+<main id="main">
+  <section class="page-hero" aria-label="Activities intro">
+    <div class="blob-field" data-blob-field="4" aria-hidden="true"></div>
+    <div class="wrap">
+      <span class="eyebrow reveal">🌿 Wellness Activities</span>
+      <h1 class="reveal">Small rituals, real relief.</h1>
+      <p class="reveal">Guided, bite-sized practices you can drop into any part of your day.</p>
+    </div>
+  </section>
+
+  <section aria-label="Activity library">
+    <div class="wrap">
+      <div class="filter-row reveal" role="group" aria-label="Filter activities">
+        <button class="filter-chip" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-chip" data-filter="breathing" aria-pressed="false">Breathing</button>
+        <button class="filter-chip" data-filter="meditation" aria-pressed="false">Meditation</button>
+        <button class="filter-chip" data-filter="movement" aria-pressed="false">Movement</button>
+        <button class="filter-chip" data-filter="journaling" aria-pressed="false">Journaling</button>
+      </div>
+
+      <div class="glass-card recommend-card reveal" id="recommend-card" style="display:none;">
+        <div class="r-icon" id="recommend-icon">✨</div>
+        <div>
+          <h4>Recommended for you</h4>
+          <p id="recommend-text">Log a mood check-in to see a suggestion here.</p>
+        </div>
+        <button class="btn-secondary" data-cursor-color="teal" id="recommend-go">Start</button>
+      </div>
+
+      <div class="activity-grid" id="activity-grid">
+        <div class="glass-card activity-card tilt reveal" data-cat="breathing">
+          <div class="activity-icon" style="background:var(--periwinkle);">🫁</div>
+          <h3>Breathing Exercise</h3>
+          <p class="duration">4 min · guided</p>
+          <p style="font-size:.85rem; opacity:.75;">A slow 4-7-8 rhythm to settle your nervous system.</p>
+          <button data-cursor-color="pink" data-scroll="breathing" data-log="breathing">Start</button>
+        </div>
+        <div class="glass-card activity-card tilt reveal" data-cat="meditation">
+          <div class="activity-icon" style="background:var(--pink);">🧘</div>
+          <h3>Guided Meditation</h3>
+          <p class="duration">10 min · audio</p>
+          <p style="font-size:.85rem; opacity:.75;">A gentle voice walks you through a body scan.</p>
+          <button data-cursor-color="pink" data-scroll="sound-card" data-log="meditation">Start</button>
+        </div>
+        <div class="glass-card activity-card tilt reveal" data-cat="journaling">
+          <div class="activity-icon" style="background:var(--yellow);">📓</div>
+          <h3>Journaling</h3>
+          <p class="duration">5 min · prompts</p>
+          <p style="font-size:.85rem; opacity:.75;">Three questions to unpack what today felt like.</p>
+          <button data-cursor-color="pink" data-scroll="journal">Start</button>
+        </div>
+        <div class="glass-card activity-card tilt reveal" data-cat="movement">
+          <div class="activity-icon" style="background:var(--green);">🤸</div>
+          <h3>Gentle Movement</h3>
+          <p class="duration">8 min · stretch</p>
+          <p style="font-size:.85rem; opacity:.75;">Low-impact stretches to release tension.</p>
+          <button data-cursor-color="pink" data-log="movement">Start</button>
+        </div>
+        <div class="glass-card activity-card tilt reveal" data-cat="meditation">
+          <div class="activity-icon" style="background:var(--lavender);">🙏</div>
+          <h3>Gratitude Practice</h3>
+          <p class="duration">3 min · quick</p>
+          <p style="font-size:.85rem; opacity:.75;">Name three good things, however small.</p>
+          <button data-cursor-color="pink" data-scroll="journal">Start</button>
+        </div>
+        <div class="glass-card activity-card tilt reveal" data-cat="meditation">
+          <div class="activity-icon" style="background:var(--orange);">🎧</div>
+          <h3>Calming Soundscape</h3>
+          <p class="duration">15 min · ambient</p>
+          <p style="font-size:.85rem; opacity:.75;">A soft ambient tone to play in the background.</p>
+          <button data-cursor-color="pink" data-scroll="sound-card" data-log="meditation">Start</button>
+        </div>
+      </div>
+
+      <div class="glass-card breathing reveal" id="breathing">
+        <div class="breath-circle-wrap">
+          <div class="breath-circle" id="breath-circle">Inhale</div>
+        </div>
+        <div>
+          <h3>4-7-8 Breathing</h3>
+          <p style="margin-top:8px; opacity:.8;">Breathe in for 4, hold for 7, breathe out for 8. Follow the circle — it grows as you inhale and settles as you exhale.</p>
+          <div class="breath-controls">
+            <button class="btn-primary" data-cursor-color="pink" id="breath-toggle">Begin</button>
+            <button class="btn-secondary" data-cursor-color="teal" id="breath-reset">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card sound-toggle reveal" id="sound-card">
+        <div style="flex:1;">
+          <h4>Ambient calm tone</h4>
+          <p style="font-size:.85rem; opacity:.7; margin-top:4px;">A soft looping pad to play while you meditate or journal.</p>
+        </div>
+        <button class="switch" id="sound-switch" role="switch" aria-checked="false" aria-label="Toggle ambient sound"></button>
+      </div>
+
+      <div class="glass-card journal-box reveal" id="journal">
+        <h3>Journaling</h3>
+        <p style="opacity:.75; font-size:.9rem; margin-top:4px;">What's one thing that stood out about today?</p>
+        <textarea id="journal-text" placeholder="Start writing…"></textarea>
+        <button class="btn-primary" id="journal-save" data-cursor-color="pink" style="margin-top:var(--space-2);">Save Entry</button>
+        <div class="journal-entries" id="journal-entries"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer aria-label="Footer">
+  <div class="footer-inner">
+    <div>
+      <h2 style="font-size:1.8rem;">Keep the calm coming.</h2>
+      <p style="margin-top:8px; opacity:.8; max-width:420px;">One gentle self-care tip in your inbox, once a week.</p>
+      <form class="footer-form" data-newsletter-form>
+        <label for="email" class="visually-hidden">Email address</label>
+        <input id="email" type="email" required placeholder="you@example.com" data-cursor-color="pink">
+        <button class="btn-primary" type="submit" data-cursor-color="pink">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-links">
+      <div><h5>Product</h5>
+        <a href="mood.html" data-transition>Mood Tracking</a>
+        <a href="activities.html" data-transition>Activities</a>
+        <a href="insights.html" data-transition>Insights</a>
+      </div>
+      <div><h5>Support</h5>
+        <a href="support.html" data-transition>Get Help</a>
+      </div>
+    </div>
+  </div>
+  <p class="fine-print">🌱 Mental Marvels — a companion for the everyday, not a replacement for professional care.</p>
+</footer>
+
+<script>
+/* ============================================================
+   MindBloom — shared behavior across all pages
+   ============================================================ */
+window.MindBloom = (function(){
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+  /* ---------- Page-load veil transition ---------- */
+  function initPageVeil(){
+    const veil = document.getElementById('page-veil');
+    if(!veil) return;
+    requestAnimationFrame(()=> veil.classList.add('active'));
+    setTimeout(()=> veil.style.display='none', 650);
+
+    document.querySelectorAll('a[data-transition]').forEach(link=>{
+      link.addEventListener('click', (e)=>{
+        const href = link.getAttribute('href');
+        if(!href || href.startsWith('#') || link.target==='_blank') return;
+        if(document.startViewTransition){ return; } // let native API handle it
+        e.preventDefault();
+        veil.style.display='block';
+        veil.classList.remove('active');
+        requestAnimationFrame(()=>veil.classList.add('active'));
+        setTimeout(()=>{ window.location.href = href; }, 420);
+      });
+    });
+  }
+
+  /* ---------- Mobile menu ---------- */
+  function initMobileMenu(){
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.mobile-menu');
+    if(!toggle || !menu) return;
+    toggle.addEventListener('click', ()=>{
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.textContent = open ? '✕' : '☰';
+    });
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  function initReveal(){
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach((e,idx)=>{
+        if(e.isIntersecting){
+          setTimeout(()=>e.target.classList.add('in'), (idx%4)*80);
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:.15});
+    els.forEach(el=>io.observe(el));
+  }
+
+  /* ---------- Tilt cards ---------- */
+  function initTilt(){
+    if(isTouch || reduceMotion) return;
+    document.querySelectorAll('.tilt').forEach(card=>{
+      card.addEventListener('mousemove', (e)=>{
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left)/r.width - 0.5;
+        const py = (e.clientY - r.top)/r.height - 0.5;
+        card.style.transform = `perspective(700px) rotateX(${(-py*8).toFixed(2)}deg) rotateY(${(px*8).toFixed(2)}deg) translateY(-6px)`;
+      });
+      card.addEventListener('mouseleave', ()=>{ card.style.transform=''; });
+    });
+  }
+
+  /* ---------- Animated counters ---------- */
+  function initCounters(){
+    const els = document.querySelectorAll('[data-count]');
+    if(!els.length) return;
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseFloat(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        const decimals = el.dataset.count.includes('.') ? 1 : 0;
+        const dur = 1200; const start = performance.now();
+        function step(now){
+          const p = Math.min((now-start)/dur, 1);
+          const eased = 1 - Math.pow(1-p, 3);
+          el.textContent = (target*eased).toFixed(decimals) + suffix;
+          if(p<1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        io.unobserve(el);
+      });
+    }, {threshold:.5});
+    els.forEach(el=>io.observe(el));
+  }
+
+  /* ---------- Ambient floating blobs ---------- */
+  const blobSVGs = {
+    heart: `<svg viewBox="0 0 60 54" width="W" height="H"><path d="M30 50 C-6 26 4 2 22 4 C28 5 30 12 30 12 C30 12 32 5 38 4 C56 2 66 26 30 50Z" fill="url(#gp)"/></svg>`,
+    star: `<svg viewBox="0 0 60 60" width="W" height="H"><path d="M30 2 C32 20 40 28 58 30 C40 32 32 40 30 58 C28 40 20 32 2 30 C20 28 28 20 30 2Z" fill="url(#gy)"/></svg>`,
+    cross: `<svg viewBox="0 0 60 60" width="W" height="H"><path d="M22 4h16c4 0 6 4 6 8v6h6c4 0 8 2 8 6v16c0 4-4 6-8 6h-6v6c0 4-2 8-6 8H22c-4 0-6-4-6-8v-6h-6c-4 0-8-2-8-6V18c0-4 4-6 8-6h6V4c0-4 2 0 6 0Z" fill="url(#gg)"/></svg>`,
+    drop: `<svg viewBox="0 0 50 60" width="W" height="H"><path d="M25 2 C40 24 46 36 46 44 C46 53 36 58 25 58 C14 58 4 53 4 44 C4 36 10 24 25 2Z" fill="url(#gb)"/></svg>`,
+  };
+  const defs = `<defs>
+    <radialGradient id="gp" cx="30%" cy="25%" r="75%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#F5A9D0"/></radialGradient>
+    <radialGradient id="gy" cx="30%" cy="25%" r="75%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#F5D06B"/></radialGradient>
+    <radialGradient id="gg" cx="30%" cy="25%" r="75%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#A8C68A"/></radialGradient>
+    <radialGradient id="gb" cx="30%" cy="25%" r="75%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#8FB4F0"/></radialGradient>
+  </defs>`;
+  function scatterBlobs(container, count){
+    if(!container) return;
+    container.insertAdjacentHTML('afterbegin', `<svg width="0" height="0">${defs}</svg>`);
+    const shapes = Object.keys(blobSVGs);
+    const anims = ['drift1','drift2','drift3'];
+    for(let i=0;i<count;i++){
+      const shape = shapes[i % shapes.length];
+      const size = 46 + Math.random()*70;
+      const html = blobSVGs[shape].replace(/W/g,size).replace(/H/g,size);
+      const el = document.createElement('div');
+      el.className='blob';
+      el.style.left = (Math.random()*90)+'%';
+      el.style.top = (Math.random()*90)+'%';
+      el.style.opacity = 0.55 + Math.random()*0.4;
+      el.style.animation = reduceMotion ? 'none' : `${anims[i%3]} ${8+Math.random()*10}s ease-in-out infinite`;
+      el.style.animationDelay = (Math.random()*4)+'s';
+      el.dataset.depth = (0.02 + Math.random()*0.05).toFixed(3);
+      el.innerHTML = html;
+      container.appendChild(el);
+    }
+  }
+  function initBlobs(){
+    document.querySelectorAll('[data-blob-field]').forEach(field=>{
+      scatterBlobs(field, parseInt(field.dataset.blobField)||5);
+    });
+    if(!isTouch && !reduceMotion){
+      let mx=window.innerWidth/2, my=window.innerHeight/2;
+      window.addEventListener('mousemove', (e)=>{ mx=e.clientX; my=e.clientY; }, {passive:true});
+      function loop(){
+        const cx = window.innerWidth/2, cy= window.innerHeight/2;
+        document.querySelectorAll('.blob').forEach(b=>{
+          const depth = parseFloat(b.dataset.depth||0.03);
+          b.style.marginLeft = ((mx-cx)*depth)+'px';
+          b.style.marginTop = ((my-cy)*depth)+'px';
+        });
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+    }
+  }
+
+  /* ---------- Custom cursor ---------- */
+  function initCursor(){
+    if(isTouch) return;
+    const dot = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
+    if(!dot||!ring) return;
+    let rx=0, ry=0, tx=0, ty=0;
+    window.addEventListener('mousemove', (e)=>{
+      tx=e.clientX; ty=e.clientY;
+      dot.style.left = tx+'px'; dot.style.top = ty+'px';
+    }, {passive:true});
+    function loop(){
+      rx += (tx-rx)*0.18; ry += (ty-ry)*0.18;
+      ring.style.left = rx+'px'; ring.style.top = ry+'px';
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+
+    const colorMap = {
+      pink:{c:'#E06BB0'}, yellow:{c:'#E0A93D'}, teal:{c:'#1E5F5A'}, purple:{c:'#3D2C6B'}
+    };
+    document.querySelectorAll('[data-cursor-color]').forEach(el=>{
+      el.addEventListener('mouseenter', ()=>{
+        const c = (colorMap[el.dataset.cursorColor] || colorMap.purple).c;
+        dot.style.background = c; ring.style.borderColor = c;
+        ring.style.width='54px'; ring.style.height='54px';
+      });
+      el.addEventListener('mouseleave', ()=>{
+        dot.style.background = '#7A2E8C'; ring.style.borderColor = '#E06BB0';
+        ring.style.width='38px'; ring.style.height='38px';
+      });
+    });
+
+    const canvas = document.getElementById('cursor-canvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    function resize(){ canvas.width=innerWidth; canvas.height=innerHeight; }
+    resize(); window.addEventListener('resize', resize);
+    let particles = []; let lastX=tx, lastY=ty;
+    window.addEventListener('mousemove', (e)=>{
+      const dist = Math.hypot(e.clientX-lastX, e.clientY-lastY);
+      if(dist>14 && particles.length<60 && !reduceMotion){
+        particles.push({x:e.clientX,y:e.clientY,r:4+Math.random()*4,life:1,
+          c:['#F5A9D0','#F5D06B','#A8C68A','#8FB4F0'][Math.floor(Math.random()*4)]});
+        lastX=e.clientX; lastY=e.clientY;
+      }
+    }, {passive:true});
+    function draw(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      particles.forEach(p=>{
+        ctx.globalAlpha = p.life; ctx.fillStyle = p.c;
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+        p.life -= 0.025; p.y -= 0.4;
+      });
+      particles = particles.filter(p=>p.life>0);
+      ctx.globalAlpha=1;
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  }
+
+  /* ---------- Data layer (localStorage) ---------- */
+  const STORE_KEY = 'mindbloom.moods.v1';
+  const JOURNAL_KEY = 'mindbloom.journal.v1';
+  const ACTIVITY_KEY = 'mindbloom.activity.v1';
+  const BADGE_KEY = 'mindbloom.badges.v1';
+  const THEME_KEY = 'mindbloom.theme.v1';
+  const REMINDER_KEY = 'mindbloom.reminder.v1';
+
+  function safeGet(key){ try{ return JSON.parse(localStorage.getItem(key))||[]; }catch(e){ return []; } }
+  function safeSet(key,val){ try{ localStorage.setItem(key, JSON.stringify(val)); return true; }catch(e){ return false; } }
+
+  function getMoods(){ return safeGet(STORE_KEY); }
+  function saveMood(entry){ const all=getMoods(); all.unshift(entry); safeSet(STORE_KEY, all); checkBadges(); return all; }
+  function deleteMood(id){ const all=getMoods().filter(m=>m.id!==id); safeSet(STORE_KEY, all); return all; }
+
+  function getJournal(){ return safeGet(JOURNAL_KEY); }
+  function saveJournal(entry){
+    entry.sentiment = sentiment(entry.text);
+    const all=getJournal(); all.unshift(entry); safeSet(JOURNAL_KEY, all); checkBadges(); return all;
+  }
+
+  /* ---------- Activity log (for the real donut chart + recommendations) ---------- */
+  function getActivityLog(){ return safeGet(ACTIVITY_KEY); }
+  function logActivity(type){
+    const all = getActivityLog();
+    all.unshift({type, date: new Date().toISOString()});
+    safeSet(ACTIVITY_KEY, all);
+    checkBadges();
+    return all;
+  }
+
+  /* ---------- Streak math ---------- */
+  function dayKey(d){ return new Date(d).toDateString(); }
+  function getCurrentStreak(moods){
+    moods = moods || getMoods();
+    const days = new Set(moods.map(m=>dayKey(m.date)));
+    let streak=0, cursor=new Date();
+    while(days.has(dayKey(cursor))){ streak++; cursor.setDate(cursor.getDate()-1); }
+    return streak;
+  }
+  function getBestStreak(moods){
+    moods = moods || getMoods();
+    if(!moods.length) return 0;
+    const days = Array.from(new Set(moods.map(m=>dayKey(m.date)))).map(d=>new Date(d)).sort((a,b)=>a-b);
+    let best=1, cur=1;
+    for(let i=1;i<days.length;i++){
+      const diff = Math.round((days[i]-days[i-1])/86400000);
+      cur = diff===1 ? cur+1 : 1;
+      best = Math.max(best,cur);
+    }
+    return Math.max(best, days.length?1:0);
+  }
+
+  /* ---------- Badges / milestones ---------- */
+  const BADGE_DEFS = [
+    {id:'first_checkin', emoji:'🌱', label:'First check-in', test:(ctx)=> ctx.moods.length>=1},
+    {id:'streak_3', emoji:'🔥', label:'3-day streak', test:(ctx)=> ctx.streak>=3},
+    {id:'streak_7', emoji:'🌸', label:'7-day streak', test:(ctx)=> ctx.streak>=7},
+    {id:'journal_5', emoji:'📓', label:'5 journal entries', test:(ctx)=> ctx.journal.length>=5},
+  ];
+  function getBadges(){ return safeGet(BADGE_KEY); }
+  function checkBadges(){
+    const unlocked = new Set(getBadges());
+    const ctx = { moods:getMoods(), journal:getJournal(), streak:getCurrentStreak() };
+    const fresh = [];
+    BADGE_DEFS.forEach(b=>{
+      if(!unlocked.has(b.id) && b.test(ctx)){ unlocked.add(b.id); fresh.push(b); }
+    });
+    if(fresh.length){ safeSet(BADGE_KEY, Array.from(unlocked)); fresh.forEach(b=>celebrateBadge(b)); }
+    return fresh;
+  }
+  function celebrateBadge(badge){
+    toast(`${badge.emoji} Badge unlocked: ${badge.label}`, {type:'badge'});
+    burstConfetti();
+  }
+
+  /* ---------- Lightweight keyword sentiment (on-device, rule-based — not a hosted model) ---------- */
+  const POSITIVE_WORDS = ['good','great','happy','calm','grateful','thankful','relaxed','proud','love','excited','peaceful','hope','hopeful','better','joy','joyful','glad','rested','accomplished','safe'];
+  const NEGATIVE_WORDS = ['bad','sad','angry','stressed','anxious','tired','worried','scared','lonely','overwhelmed','frustrated','upset','hurt','exhausted','hopeless','afraid','hate','awful','terrible','numb'];
+  function sentiment(text){
+    if(!text) return {label:'neutral', emoji:'😐', score:0};
+    const words = text.toLowerCase().match(/[a-z']+/g) || [];
+    let score = 0;
+    words.forEach(w=>{
+      if(POSITIVE_WORDS.includes(w)) score++;
+      if(NEGATIVE_WORDS.includes(w)) score--;
+    });
+    if(score>0) return {label:'positive', emoji:'🙂', score};
+    if(score<0) return {label:'negative', emoji:'😔', score};
+    return {label:'neutral', emoji:'😐', score};
+  }
+
+  /* ---------- Calm score + AI-style insight engine (rule-based, fully on-device) ---------- */
+  const MOOD_BASELINE = {Happy:85, Bored:55, Sleepy:50, Angry:30, Scared:25};
+  function computeCalmScore(dateStr, moods, journal){
+    moods = moods || getMoods(); journal = journal || getJournal();
+    const key = dayKey(dateStr);
+    const dayMoods = moods.filter(m=> dayKey(m.date)===key);
+    const dayJournal = journal.filter(j=> dayKey(j.date)===key);
+    if(!dayMoods.length && !dayJournal.length) return null;
+    let total=0, n=0;
+    dayMoods.forEach(m=>{ total += (MOOD_BASELINE[m.mood] ?? 50); n++; });
+    dayJournal.forEach(j=>{
+      const s = j.sentiment || sentiment(j.text);
+      total += 50 + (s.score*12);
+      n++;
+    });
+    return n ? Math.max(5, Math.min(100, Math.round(total/n))) : null;
+  }
+  function getLastNDaysCalmScores(n){
+    const moods=getMoods(), journal=getJournal();
+    const out=[];
+    for(let i=n-1;i>=0;i--){
+      const d = new Date(); d.setDate(d.getDate()-i);
+      out.push({date:d, score: computeCalmScore(d, moods, journal)});
+    }
+    return out;
+  }
+  const INSIGHT_TEMPLATES = {
+    Happy: [
+      "You've been logging Happy most often — whatever you're doing this week, it's working. Notice what tends to come right before those moods.",
+      "Happy is your leading mood lately. That's worth protecting — try to keep whatever routine is supporting it."
+    ],
+    Angry: [
+      "Angry has shown up a fair amount this week. A short breathing session before reactive moments might help — try the 4-7-8 exercise on the Activities page.",
+      "There's a pattern of Angry check-ins recently. A quick pause with guided breathing tends to help before things escalate."
+    ],
+    Sleepy: [
+      "Sleepy is your most common check-in. Consider moving your wind-down routine 30 minutes earlier tonight.",
+      "You're logging Sleepy often. Your sleep stat suggests it might help to protect your last hour before bed."
+    ],
+    Bored: [
+      "Bored has come up often. A short Gentle Movement or Gratitude session might help re-engage your energy.",
+      "Bored keeps appearing in your check-ins — small novelty, even a 3-minute activity, tends to shift this."
+    ],
+    Scared: [
+      "Scared has appeared a few times this week. It may help to talk to someone — see the Guided Support page for real resources.",
+      "Scared shows up more than usual lately. You don't have to sit with that alone — the Support page has real people to talk to."
+    ]
+  };
+  function generateInsight(){
+    const moods = getMoods(), journal = getJournal();
+    if(!moods.length) return "Start logging your mood to unlock a personalized insight here.";
+    const counts = {};
+    moods.forEach(m=> counts[m.mood]=(counts[m.mood]||0)+1);
+    const topMood = Object.keys(counts).reduce((a,b)=> counts[a]>counts[b]?a:b);
+    const templates = INSIGHT_TEMPLATES[topMood] || ["Keep checking in daily to unlock deeper trends."];
+    const pick = templates[Math.floor(Math.random()*templates.length)];
+
+    // Correlation: compare calm score on days with a journal entry vs without
+    const journalDays = new Set(journal.map(j=>dayKey(j.date)));
+    const scores = getLastNDaysCalmScores(14).filter(d=>d.score!==null);
+    const withJournal = scores.filter(d=> journalDays.has(dayKey(d.date)));
+    const withoutJournal = scores.filter(d=> !journalDays.has(dayKey(d.date)));
+    let correlation = '';
+    if(withJournal.length>=2 && withoutJournal.length>=2){
+      const avg = arr => arr.reduce((s,d)=>s+d.score,0)/arr.length;
+      const a = avg(withJournal), b = avg(withoutJournal);
+      if(a - b >= 6) correlation = " Your calm score tends to run higher on days you journal — worth keeping up.";
+      else if(b - a >= 6) correlation = " Interestingly, your calm score looks a little steadier on days without a journal entry — might be worth noticing what's different those days.";
+    }
+    return pick + correlation;
+  }
+
+  /* ---------- Toast notifications ---------- */
+  function ensureToastHost(){
+    let host = document.getElementById('toast-host');
+    if(!host){
+      host = document.createElement('div');
+      host.id='toast-host';
+      host.setAttribute('aria-live','polite');
+      host.className='toast-host';
+      document.body.appendChild(host);
+    }
+    return host;
+  }
+  function toast(message, opts){
+    opts = opts || {};
+    const host = ensureToastHost();
+    const el = document.createElement('div');
+    el.className = 'toast' + (opts.type ? ' toast-'+opts.type : '');
+    el.textContent = message;
+    host.appendChild(el);
+    requestAnimationFrame(()=> el.classList.add('in'));
+    setTimeout(()=>{
+      el.classList.remove('in');
+      setTimeout(()=> el.remove(), 300);
+    }, opts.duration || 3200);
+  }
+
+  /* ---------- Confetti burst (CSS-driven, respects reduced motion) ---------- */
+  function burstConfetti(){
+    if(reduceMotion) return;
+    const colors = ['#F5A9D0','#F5D06B','#A8C68A','#8FB4F0','#FF8A3D'];
+    const host = document.createElement('div');
+    host.className='confetti-host';
+    for(let i=0;i<24;i++){
+      const p = document.createElement('span');
+      p.className='confetti-piece';
+      p.style.left = (45+Math.random()*10)+'%';
+      p.style.background = colors[i%colors.length];
+      p.style.setProperty('--dx', (Math.random()*260-130)+'px');
+      p.style.setProperty('--rot', (Math.random()*720-360)+'deg');
+      p.style.animationDelay = (Math.random()*0.15)+'s';
+      host.appendChild(p);
+    }
+    document.body.appendChild(host);
+    setTimeout(()=> host.remove(), 1600);
+  }
+
+  /* ---------- Dark mode ---------- */
+  function initDarkMode(){
+    const stored = (()=>{ try{ return localStorage.getItem(THEME_KEY); }catch(e){ return null; } })();
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = stored || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+
+    const btn = document.querySelector('.theme-toggle');
+    if(!btn) return;
+    btn.textContent = theme==='dark' ? '☀️' : '🌙';
+    btn.setAttribute('aria-label', theme==='dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    btn.addEventListener('click', ()=>{
+      const next = document.documentElement.getAttribute('data-theme')==='dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try{ localStorage.setItem(THEME_KEY, next); }catch(e){}
+      btn.textContent = next==='dark' ? '☀️' : '🌙';
+      btn.setAttribute('aria-label', next==='dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    });
+  }
+
+  /* ---------- Daily check-in reminder banner ---------- */
+  function initReminderBanner(){
+    const container = document.getElementById('reminder-banner-host');
+    if(!container) return;
+    let settings; try{ settings = JSON.parse(localStorage.getItem(REMINDER_KEY)); }catch(e){ settings = null; }
+    const moods = getMoods();
+    const loggedToday = moods.some(m=> dayKey(m.date)===dayKey(new Date()));
+
+    function render(){
+      container.innerHTML = '';
+      if(loggedToday){
+        return;
+      }
+      if(settings && settings.time){
+        const [h,m] = settings.time.split(':').map(Number);
+        const now = new Date();
+        const target = new Date(); target.setHours(h,m,0,0);
+        if(now < target) return; // not time yet
+      }
+      const banner = document.createElement('div');
+      banner.className = 'reminder-banner glass-card';
+      banner.innerHTML = `<span>🌤️ You haven't checked in today${settings && settings.time ? ' — your reminder was set for '+settings.time : ''}.</span>
+        <a class="btn-secondary" href="mood.html" data-cursor-color="pink">Check in now</a>`;
+      container.appendChild(banner);
+    }
+    render();
+
+    const timeInput = document.getElementById('reminder-time');
+    if(timeInput){
+      if(settings && settings.time) timeInput.value = settings.time;
+      timeInput.addEventListener('change', ()=>{
+        try{ localStorage.setItem(REMINDER_KEY, JSON.stringify({time:timeInput.value})); }catch(e){}
+        settings = {time:timeInput.value};
+        toast('Reminder time saved 🌸');
+        render();
+        if(window.Notification && Notification.permission==='granted'){
+          // Only used if the user already granted permission elsewhere — no prompt is triggered here.
+        }
+      });
+    }
+  }
+
+  /* ---------- Export all local data as a downloadable JSON file ---------- */
+  function exportData(){
+    const payload = {
+      exportedAt: new Date().toISOString(),
+      moods: getMoods(),
+      journal: getJournal(),
+      activity: getActivityLog(),
+      badges: getBadges()
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'mindbloom-data.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    toast('Your data was downloaded as mindbloom-data.json');
+  }
+
+  /* ---------- Newsletter forms (toast instead of alert) ---------- */
+  function initNewsletterForms(){
+    document.querySelectorAll('form[data-newsletter-form]').forEach(form=>{
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        form.reset();
+        toast('Thanks — your first tip lands next Monday. 🌱');
+      });
+    });
+  }
+
+  function initAll(){
+    initDarkMode();
+    initNewsletterForms();
+    initPageVeil();
+    initMobileMenu();
+    initReveal();
+    initTilt();
+    initCounters();
+    initBlobs();
+    initCursor();
+    initReminderBanner();
+  }
+
+  return {
+    initAll, reduceMotion, isTouch,
+    getMoods, saveMood, deleteMood,
+    getJournal, saveJournal,
+    getActivityLog, logActivity,
+    getCurrentStreak, getBestStreak,
+    getBadges, checkBadges, BADGE_DEFS,
+    sentiment, computeCalmScore, getLastNDaysCalmScores,
+    generateInsight, toast, burstConfetti, exportData
+  };
+})();
+
+document.addEventListener('DOMContentLoaded', MindBloom.initAll);
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register('sw.js').catch(()=>{ /* offline shell is a nice-to-have, fail silently */ });
+  });
+}
+
+</script>
+<script>
+  /* Filters */
+  document.querySelectorAll('.filter-chip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-chip').forEach(c=>c.setAttribute('aria-pressed','false'));
+      chip.setAttribute('aria-pressed','true');
+      const f = chip.dataset.filter;
+      document.querySelectorAll('#activity-grid .activity-card').forEach(card=>{
+        card.style.display = (f==='all' || card.dataset.cat===f) ? '' : 'none';
+      });
+    });
+  });
+
+  /* Delegated Start buttons: scroll to the right section, and log the activity type */
+  document.getElementById('activity-grid').addEventListener('click', (e)=>{
+    const btn = e.target.closest('button[data-scroll], button[data-log]');
+    if(!btn) return;
+    if(btn.dataset.scroll) document.getElementById(btn.dataset.scroll).scrollIntoView({behavior:'smooth'});
+    if(btn.dataset.log) MindBloom.logActivity(btn.dataset.log);
+  });
+
+  /* Smart activity suggestion — simple rule-based mapping from the most recent logged mood.
+     This is on-device, keyword/rule logic only, not a hosted model. */
+  (function renderRecommendation(){
+    const moods = MindBloom.getMoods();
+    const card = document.getElementById('recommend-card');
+    if(!moods.length){ return; }
+    const last = moods[0];
+    const map = {
+      Angry:  {icon:'🫁', text:'Feeling Angry recently — a 4-7-8 breathing session can help settle things.', scroll:'breathing', log:'breathing'},
+      Sleepy: {icon:'🤸', text:'Feeling Sleepy recently — gentle movement can help you re-energize.', scroll:null, log:'movement'},
+      Bored:  {icon:'🙏', text:'Feeling Bored recently — a quick gratitude journal might help re-engage.', scroll:'journal', log:null},
+      Scared: {icon:'🧘', text:'Feeling Scared recently — a guided meditation can help you feel steadier.', scroll:'sound-card', log:'meditation'},
+      Happy:  {icon:'🎧', text:'Feeling Happy recently — a calming soundscape can help you savor it.', scroll:'sound-card', log:'meditation'}
+    };
+    const rec = map[last.mood];
+    if(!rec) return;
+    document.getElementById('recommend-icon').textContent = rec.icon;
+    document.getElementById('recommend-text').textContent = rec.text;
+    card.style.display = 'flex';
+    document.getElementById('recommend-go').addEventListener('click', ()=>{
+      if(rec.scroll) document.getElementById(rec.scroll).scrollIntoView({behavior:'smooth'});
+      if(rec.log) MindBloom.logActivity(rec.log);
+    });
+  })();
+
+  /* Breathing timer */
+  const circle = document.getElementById('breath-circle');
+  const toggleBtn = document.getElementById('breath-toggle');
+  const resetBtn = document.getElementById('breath-reset');
+  let phase=0, timer=null;
+  const phases = [{label:'Inhale', seconds:4, scale:1.3},{label:'Hold', seconds:7, scale:1.3},{label:'Exhale', seconds:8, scale:0.85}];
+  function runPhase(){
+    const p = phases[phase % phases.length];
+    circle.textContent = p.label;
+    circle.style.transitionDuration = p.seconds+'s';
+    circle.style.transform = `scale(${p.scale})`;
+    timer = setTimeout(()=>{ phase++; runPhase(); }, p.seconds*1000);
+  }
+  toggleBtn.addEventListener('click', ()=>{
+    if(timer){ clearTimeout(timer); timer=null; toggleBtn.textContent='Begin'; return; }
+    toggleBtn.textContent='Pause'; MindBloom.logActivity('breathing'); runPhase();
+  });
+  resetBtn.addEventListener('click', ()=>{
+    clearTimeout(timer); timer=null; phase=0;
+    circle.style.transform='scale(1)'; circle.textContent='Inhale'; toggleBtn.textContent='Begin';
+  });
+
+  /* Ambient sound (WebAudio, generated — no external files) */
+  let audioCtx, osc, gain, playing=false;
+  const soundSwitch = document.getElementById('sound-switch');
+  soundSwitch.addEventListener('click', ()=>{
+    playing = !playing;
+    soundSwitch.setAttribute('aria-checked', playing);
+    if(playing){
+      MindBloom.logActivity('meditation');
+      audioCtx = audioCtx || new (window.AudioContext||window.webkitAudioContext)();
+      osc = audioCtx.createOscillator();
+      const osc2 = audioCtx.createOscillator();
+      gain = audioCtx.createGain();
+      osc.type='sine'; osc.frequency.value=196; // G3
+      osc2.type='sine'; osc2.frequency.value=294; // D4
+      gain.gain.value=0;
+      osc.connect(gain); osc2.connect(gain); gain.connect(audioCtx.destination);
+      osc.start(); osc2.start();
+      gain.gain.linearRampToValueAtTime(0.05, audioCtx.currentTime+1.5);
+      soundSwitch._osc2 = osc2;
+    } else if(audioCtx){
+      gain.gain.linearRampToValueAtTime(0, audioCtx.currentTime+0.8);
+      setTimeout(()=>{ osc && osc.stop(); soundSwitch._osc2 && soundSwitch._osc2.stop(); }, 900);
+    }
+  });
+
+  /* Journaling — each entry gets an on-device, keyword-based sentiment badge (not a hosted model) */
+  function renderJournal(){
+    const list = document.getElementById('journal-entries');
+    const entries = MindBloom.getJournal();
+    list.innerHTML = '';
+    entries.slice(0,6).forEach(e=>{
+      const div = document.createElement('div');
+      div.className='entry';
+      const d = new Date(e.date);
+      const s = e.sentiment || MindBloom.sentiment(e.text);
+      div.innerHTML = `<time>${d.toLocaleDateString(undefined,{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})} · ${s.emoji} ${s.label}</time>${e.text}`;
+      list.appendChild(div);
+    });
+  }
+  document.getElementById('journal-save').addEventListener('click', ()=>{
+    const ta = document.getElementById('journal-text');
+    const text = ta.value.trim();
+    if(!text) return;
+    MindBloom.saveJournal({text, date:new Date().toISOString()});
+    MindBloom.logActivity('journal');
+    ta.value='';
+    renderJournal();
+    MindBloom.toast('Journal entry saved 📓');
+  });
+  renderJournal();
+</script>
+
+<!-- ============================================================
+     CALM COMPANION — new, self-contained feature (does not touch
+     any existing MindBloom styles, classes, or markup)
+     ============================================================ -->
+<style id="cc-pet-styles">
+#cc-companion{
+  position:fixed; right:18px; bottom:18px; z-index:500;
+  display:flex; flex-direction:column; align-items:flex-end;
+  font-family:var(--font-body, 'Quicksand', sans-serif);
+}
+
+/* ---------- Speech bubble ---------- */
+#cc-bubble{
+  max-width:220px; margin-bottom:10px; padding:12px 16px;
+  background:rgba(255,249,238,.95); color:var(--ink-purple, #3D2C6B);
+  border-radius:18px 18px 4px 18px; box-shadow:var(--shadow-card, 0 14px 30px -12px rgba(61,44,107,.22));
+  border:1px solid rgba(255,255,255,.7);
+  font-size:.88rem; font-weight:600; line-height:1.4;
+  opacity:0; transform:translateY(8px) scale(.92); transform-origin:bottom right;
+  transition:opacity .28s ease, transform .28s ease; pointer-events:none;
+}
+#cc-bubble.cc-show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
+:root[data-theme="dark"] #cc-bubble{ background:rgba(28,24,48,.95); border-color:rgba(255,255,255,.08); }
+
+/* ---------- Widget shell ---------- */
+#cc-pet-btn{
+  position:relative; width:76px; height:76px; border:none; border-radius:50%;
+  background:rgba(255,249,238,.75); backdrop-filter:blur(10px);
+  box-shadow:var(--shadow-card, 0 14px 30px -12px rgba(61,44,107,.22));
+  border:1px solid rgba(255,255,255,.6);
+  display:flex; align-items:center; justify-content:center;
+  cursor:none; padding:0; transition:transform .25s ease, box-shadow .25s ease, opacity .3s ease;
+}
+@media (hover:none),(pointer:coarse){ #cc-pet-btn, #cc-minimize, #cc-restore{cursor:pointer;} }
+#cc-pet-btn:hover{ transform:translateY(-3px) scale(1.05); }
+#cc-pet-btn:active{ transform:scale(.94); }
+:root[data-theme="dark"] #cc-pet-btn{ background:rgba(28,24,48,.75); border-color:rgba(255,255,255,.08); }
+
+#cc-pet-svg{ width:56px; height:56px; overflow:visible; }
+
+/* idle breathing */
+@keyframes cc-breathe{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.045); } }
+@keyframes cc-breathe-slow{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.02); } }
+.cc-body-group{ transform-origin:50% 60%; animation:cc-breathe 3.6s ease-in-out infinite; }
+#cc-companion.cc-inactive-today .cc-body-group{ animation:cc-breathe-slow 5.2s ease-in-out infinite; }
+
+/* happy bounce (tiers: content / joyful) */
+@keyframes cc-bounce{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-6px); } }
+#cc-companion[data-mood="content"] #cc-pet-btn,
+#cc-companion[data-mood="joyful"] #cc-pet-btn{ animation:cc-bounce 2.4s ease-in-out infinite; }
+
+/* blink */
+@keyframes cc-blink{ 0%,92%,100%{ transform:scaleY(1); } 96%{ transform:scaleY(.1); } }
+.cc-eyes-open{ transform-origin:center; animation:cc-blink 5.5s ease-in-out infinite; }
+
+/* sparkles */
+.cc-sparkle{ opacity:0; transform-origin:center; animation:cc-sparkle 2.6s ease-in-out infinite; }
+.cc-sparkle:nth-child(2){ animation-delay:.5s; }
+.cc-sparkle:nth-child(3){ animation-delay:1s; }
+@keyframes cc-sparkle{ 0%,100%{ opacity:0; transform:scale(.4) rotate(0deg); } 50%{ opacity:1; transform:scale(1) rotate(25deg); } }
+#cc-companion[data-mood="joyful"] .cc-sparkle-group{ display:block; }
+#cc-companion:not([data-mood="joyful"]) .cc-sparkle-group{ display:none; }
+
+/* zzz for sleepy */
+.cc-zzz{ opacity:0; }
+#cc-companion[data-mood="sleepy"] .cc-zzz{ opacity:1; animation:cc-zzz-float 3.2s ease-in-out infinite; }
+#cc-companion:not([data-mood="sleepy"]) .cc-zzz-group{ display:none; }
+@keyframes cc-zzz-float{ 0%{ opacity:0; transform:translate(0,0); } 30%{ opacity:1; } 100%{ opacity:0; transform:translate(6px,-14px); } }
+
+/* mood-driven eye states */
+#cc-companion[data-mood="sleepy"] .cc-eyes-open{ display:none; }
+#cc-companion[data-mood="sleepy"] .cc-eyes-closed{ display:block; }
+#cc-companion:not([data-mood="sleepy"]) .cc-eyes-closed{ display:none; }
+
+/* mood-driven blush */
+#cc-companion[data-mood="calm"] .cc-blush,
+#cc-companion[data-mood="sleepy"] .cc-blush{ opacity:0; }
+#cc-companion[data-mood="content"] .cc-blush,
+#cc-companion[data-mood="joyful"] .cc-blush{ opacity:.9; }
+
+/* inactive-today dimming */
+#cc-companion.cc-inactive-today #cc-pet-btn{ filter:saturate(.55) brightness(.92); }
+
+/* ---------- Happiness ring ---------- */
+#cc-ring{ position:absolute; inset:-4px; pointer-events:none; }
+#cc-ring circle.cc-ring-track{ stroke:rgba(61,44,107,.12); }
+:root[data-theme="dark"] #cc-ring circle.cc-ring-track{ stroke:rgba(255,255,255,.1); }
+#cc-ring circle.cc-ring-fill{ stroke:var(--pink-deep, #E06BB0); transition:stroke-dashoffset .6s ease, stroke .4s ease; }
+
+/* ---------- Minimize / restore ---------- */
+#cc-minimize{
+  position:absolute; top:-4px; right:-4px; width:22px; height:22px; border-radius:50%;
+  background:var(--ink-purple, #3D2C6B); color:#fff; border:2px solid var(--cream, #FFF9EE);
+  font-size:.7rem; line-height:1; display:flex; align-items:center; justify-content:center;
+  cursor:none; padding:0;
+}
+#cc-restore{
+  width:46px; height:46px; border-radius:50%; border:none;
+  background:rgba(255,249,238,.85); backdrop-filter:blur(8px);
+  box-shadow:var(--shadow-card, 0 14px 30px -12px rgba(61,44,107,.22));
+  display:none; align-items:center; justify-content:center; font-size:1.3rem; cursor:none;
+}
+:root[data-theme="dark"] #cc-restore{ background:rgba(28,24,48,.85); }
+#cc-companion.cc-minimized #cc-pet-btn{ display:none; }
+#cc-companion.cc-minimized #cc-bubble{ display:none; }
+#cc-companion.cc-minimized #cc-restore{ display:flex; }
+#cc-companion:not(.cc-minimized) #cc-restore{ display:none; }
+
+/* ---------- Label / status pill (shows briefly after activity) ---------- */
+#cc-toast{
+  position:absolute; bottom:84px; right:0; white-space:nowrap;
+  background:var(--ink-purple, #3D2C6B); color:var(--cream,#FFF9EE);
+  font-size:.76rem; font-weight:700; padding:6px 12px; border-radius:999px;
+  opacity:0; transform:translateY(6px); transition:opacity .3s ease, transform .3s ease; pointer-events:none;
+}
+#cc-toast.cc-show{ opacity:1; transform:translateY(0); }
+
+/* ---------- Reduced motion ---------- */
+.cc-reduce-motion .cc-body-group,
+.cc-reduce-motion #cc-pet-btn,
+.cc-reduce-motion .cc-eyes-open,
+.cc-reduce-motion .cc-sparkle,
+.cc-reduce-motion .cc-zzz{ animation:none !important; }
+
+/* ---------- Responsive ---------- */
+@media (max-width:600px){
+  #cc-companion{ right:12px; bottom:12px; }
+  #cc-pet-btn{ width:64px; height:64px; }
+  #cc-pet-svg{ width:46px; height:46px; }
+  #cc-bubble{ max-width:min(62vw,200px); font-size:.82rem; }
+  #cc-restore{ width:42px; height:42px; }
+}
+</style>
+
+<!-- ============================================================
+     CALM COMPANION — floating virtual pet widget (new + self-contained)
+     ============================================================ -->
+<div id="cc-companion" data-mood="calm" role="complementary" aria-label="Calm Companion, your wellness pet">
+
+  <div id="cc-bubble" role="status" aria-live="polite"></div>
+  <div id="cc-toast" aria-hidden="true"></div>
+
+  <button id="cc-pet-btn" type="button" aria-label="Your Calm Companion — tap for an encouraging message">
+    <svg id="cc-ring" viewBox="0 0 76 76" aria-hidden="true">
+      <circle class="cc-ring-track" cx="38" cy="38" r="34" fill="none" stroke-width="3"></circle>
+      <circle id="cc-ring-fill" class="cc-ring-fill" cx="38" cy="38" r="34" fill="none" stroke-width="3"
+        stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="107"
+        transform="rotate(-90 38 38)"></circle>
+    </svg>
+
+    <svg id="cc-pet-svg" viewBox="0 0 100 100" aria-hidden="true">
+      <g class="cc-body-group">
+        <!-- sparkles (joyful only) -->
+        <g class="cc-sparkle-group">
+          <path class="cc-sparkle" d="M14 20 l2.4 5.6 5.6 2.4 -5.6 2.4 -2.4 5.6 -2.4-5.6L6 28l5.6-2.4z" fill="#F5D06B"></path>
+          <path class="cc-sparkle" d="M86 26 l1.8 4.2 4.2 1.8 -4.2 1.8 -1.8 4.2 -1.8-4.2L80 32l4.2-1.8z" fill="#F5A9D0"></path>
+          <path class="cc-sparkle" d="M80 66 l1.6 3.8 3.8 1.6 -3.8 1.6 -1.6 3.8 -1.6-3.8L74 71.4l3.8-1.6z" fill="#8FB4F0"></path>
+        </g>
+
+        <!-- zzz (sleepy only) -->
+        <g class="cc-zzz-group">
+          <text class="cc-zzz" x="66" y="26" font-size="14" font-weight="700" fill="#8FB4F0" font-family="Fredoka, sans-serif">z</text>
+          <text class="cc-zzz" x="74" y="18" font-size="10" font-weight="700" fill="#8FB4F0" font-family="Fredoka, sans-serif">z</text>
+        </g>
+
+        <!-- ears -->
+        <path class="cc-ear" d="M28 32 C 24 18, 34 14, 40 26 Z" fill="var(--pink-deep,#E06BB0)"></path>
+        <path class="cc-ear" d="M72 32 C 76 18, 66 14, 60 26 Z" fill="var(--pink-deep,#E06BB0)"></path>
+
+        <!-- body / blob -->
+        <path class="cc-body" d="M50 20 C 74 20, 84 38, 82 56 C 80 76, 66 86, 50 86 C 34 86, 20 76, 18 56 C 16 38, 26 20, 50 20 Z"
+          fill="url(#cc-body-gradient)"></path>
+
+        <!-- little sprout on head, nods to MindBloom -->
+        <path d="M50 20 C 48 14, 50 9, 50 9 C 50 9, 52 14, 50 20 Z" fill="var(--green-deep,#6E9A4E)"></path>
+        <ellipse cx="45" cy="12" rx="4" ry="2.6" fill="var(--green-deep,#6E9A4E)" transform="rotate(-30 45 12)"></ellipse>
+        <ellipse cx="55" cy="12" rx="4" ry="2.6" fill="var(--green-deep,#6E9A4E)" transform="rotate(30 55 12)"></ellipse>
+
+        <!-- blush -->
+        <ellipse class="cc-blush" cx="32" cy="60" rx="5.5" ry="3.5" fill="var(--pink,#F5A9D0)" opacity="0"></ellipse>
+        <ellipse class="cc-blush" cx="68" cy="60" rx="5.5" ry="3.5" fill="var(--pink,#F5A9D0)" opacity="0"></ellipse>
+
+        <!-- eyes: open -->
+        <g class="cc-eyes-open">
+          <circle cx="38" cy="52" r="4.2" fill="var(--ink-purple,#3D2C6B)"></circle>
+          <circle cx="62" cy="52" r="4.2" fill="var(--ink-purple,#3D2C6B)"></circle>
+        </g>
+        <!-- eyes: closed (sleepy) -->
+        <g class="cc-eyes-closed" style="display:none;">
+          <path d="M33 52 Q38 56 43 52" stroke="var(--ink-purple,#3D2C6B)" stroke-width="2.4" fill="none" stroke-linecap="round"></path>
+          <path d="M57 52 Q62 56 67 52" stroke="var(--ink-purple,#3D2C6B)" stroke-width="2.4" fill="none" stroke-linecap="round"></path>
+        </g>
+
+        <!-- mouth -->
+        <path id="cc-mouth" d="M42 66 Q50 71 58 66" stroke="var(--ink-purple,#3D2C6B)" stroke-width="2.6" fill="none" stroke-linecap="round"></path>
+      </g>
+
+      <defs>
+        <linearGradient id="cc-body-gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop id="cc-grad-a" offset="0%" stop-color="#F5D06B"></stop>
+          <stop id="cc-grad-b" offset="100%" stop-color="#F5A9D0"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <button id="cc-minimize" type="button" aria-label="Minimize Calm Companion" title="Minimize">–</button>
+  </button>
+
+  <button id="cc-restore" type="button" aria-label="Show Calm Companion">🌱</button>
+</div>
+
+<!-- ============================================================
+     CALM COMPANION — logic (new, self-contained, localStorage only)
+     Hooks into MindBloom.saveMood / saveJournal / logActivity by
+     WRAPPING them after they're defined — their original code is
+     never modified.
+     ============================================================ -->
+<script>
+(function(){
+  'use strict';
+
+  var PET_KEY = 'mindbloom.pet.v1';
+  var MAX_HAPPY = 100, MIN_HAPPY = 5;
+  var DECAY_PER_DAY = 14;      // gentle decay for each full day with no activity
+  var GAIN_PER_ACTION = 16;    // happiness gained per wellness action
+
+  var AFFIRMATIONS = [
+    "You showed up today — that already counts. 🌱",
+    "Small steps still move you forward.",
+    "Your feelings are valid, whatever they are right now.",
+    "Breathe. You're doing better than you think.",
+    "One calm moment can change the whole day.",
+    "It's okay to rest. Growth happens quietly too.",
+    "You're allowed to take up space and be gentle with yourself.",
+    "Progress isn't a straight line — and that's alright.",
+    "I'm proud of you for checking in on yourself.",
+    "You don't have to be perfect, just present.",
+    "This moment of calm is yours. Enjoy it.",
+    "Every check-in waters a little more growth. 🌸"
+  ];
+
+  function todayKey(){ return new Date().toDateString(); }
+  function daysBetween(a,b){
+    var d1 = new Date(a), d2 = new Date(b);
+    d1.setHours(0,0,0,0); d2.setHours(0,0,0,0);
+    return Math.round((d2-d1)/86400000);
+  }
+
+  function loadState(){
+    var fallback = { happiness:60, lastActiveDate:todayKey(), lastDecayDate:todayKey(), minimized:false };
+    try{
+      var raw = JSON.parse(localStorage.getItem(PET_KEY));
+      if(!raw || typeof raw.happiness!=='number') return fallback;
+      return Object.assign(fallback, raw);
+    }catch(e){ return fallback; }
+  }
+  function saveState(s){
+    try{ localStorage.setItem(PET_KEY, JSON.stringify(s)); }catch(e){ /* storage unavailable, feature just won't persist */ }
+  }
+
+  function applyDecay(state){
+    var diff = daysBetween(state.lastDecayDate, todayKey());
+    if(diff >= 1){
+      state.happiness = Math.max(MIN_HAPPY, state.happiness - DECAY_PER_DAY * diff);
+      state.lastDecayDate = todayKey();
+    }
+    return state;
+  }
+
+  var state = applyDecay(loadState());
+  saveState(state);
+
+  var els = {};
+  function cacheEls(){
+    els.root = document.getElementById('cc-companion');
+    els.btn = document.getElementById('cc-pet-btn');
+    els.bubble = document.getElementById('cc-bubble');
+    els.toast = document.getElementById('cc-toast');
+    els.minimize = document.getElementById('cc-minimize');
+    els.restore = document.getElementById('cc-restore');
+    els.ringFill = document.getElementById('cc-ring-fill');
+    els.mouth = document.getElementById('cc-mouth');
+    els.gradA = document.getElementById('cc-grad-a');
+    els.gradB = document.getElementById('cc-grad-b');
+  }
+
+  function moodTier(h){
+    if(h <= 25) return 'sleepy';
+    if(h <= 50) return 'calm';
+    if(h <= 78) return 'content';
+    return 'joyful';
+  }
+
+  var PALETTE = {
+    sleepy:  { a:'#B7B0D6', b:'#9BB0D8', mouth:'M42 68 Q50 68 58 68' },
+    calm:    { a:'#F5D06B', b:'#F5A9D0', mouth:'M42 66 Q50 71 58 66' },
+    content: { a:'#F5D06B', b:'#8FB4F0', mouth:'M40 65 Q50 74 60 65' },
+    joyful:  { a:'#F5A9D0', b:'#A8C68A', mouth:'M38 64 Q50 78 62 64' }
+  };
+
+  function render(){
+    if(!els.root) return;
+    var tier = moodTier(state.happiness);
+    var loggedToday = state.lastActiveDate === todayKey();
+
+    els.root.setAttribute('data-mood', tier);
+    els.root.classList.toggle('cc-inactive-today', !loggedToday);
+    els.root.classList.toggle('cc-minimized', !!state.minimized);
+
+    var reduceMotion = (window.MindBloom && window.MindBloom.reduceMotion) ||
+      (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    els.root.classList.toggle('cc-reduce-motion', !!reduceMotion);
+
+    var pal = PALETTE[tier];
+    if(els.gradA) els.gradA.setAttribute('stop-color', pal.a);
+    if(els.gradB) els.gradB.setAttribute('stop-color', pal.b);
+    if(els.mouth) els.mouth.setAttribute('d', pal.mouth);
+
+    if(els.ringFill){
+      var circumference = 213.6;
+      var offset = circumference * (1 - Math.max(0, Math.min(100, state.happiness)) / 100);
+      els.ringFill.style.strokeDashoffset = String(offset);
+    }
+
+    var labels = { sleepy:'Resting — say hi?', calm:'Feeling calm', content:'Feeling good', joyful:'Thriving today!' };
+    if(els.btn) els.btn.setAttribute('aria-label', 'Your Calm Companion — ' + labels[tier] + '. Tap for an encouraging message');
+  }
+
+  function boostHappiness(){
+    state.happiness = Math.min(MAX_HAPPY, state.happiness + GAIN_PER_ACTION);
+    state.lastActiveDate = todayKey();
+    state.lastDecayDate = todayKey();
+    saveState(state);
+    render();
+    showToast('+' + GAIN_PER_ACTION + ' happiness 💛');
+    bounceOnce();
+  }
+
+  function bounceOnce(){
+    if(!els.btn) return;
+    els.btn.classList.remove('cc-pop');
+    void els.btn.offsetWidth; // restart animation
+    els.btn.classList.add('cc-pop');
+  }
+
+  var toastTimer = null;
+  function showToast(msg){
+    if(!els.toast) return;
+    els.toast.textContent = msg;
+    els.toast.classList.add('cc-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ els.toast.classList.remove('cc-show'); }, 2200);
+  }
+
+  var bubbleTimer = null;
+  function toggleBubble(){
+    if(!els.bubble) return;
+    if(els.bubble.classList.contains('cc-show')){
+      hideBubble();
+      return;
+    }
+    var msg = AFFIRMATIONS[Math.floor(Math.random() * AFFIRMATIONS.length)];
+    els.bubble.textContent = msg;
+    els.bubble.classList.add('cc-show');
+    clearTimeout(bubbleTimer);
+    bubbleTimer = setTimeout(hideBubble, 4500);
+  }
+  function hideBubble(){
+    if(!els.bubble) return;
+    els.bubble.classList.remove('cc-show');
+  }
+
+  function initWidget(){
+    cacheEls();
+    if(!els.root) return;
+    render();
+
+    els.btn.addEventListener('click', function(e){
+      if(e.target === els.minimize) return;
+      toggleBubble();
+    });
+    els.minimize.addEventListener('click', function(e){
+      e.stopPropagation();
+      state.minimized = true; saveState(state); render(); hideBubble();
+    });
+    els.restore.addEventListener('click', function(){
+      state.minimized = false; saveState(state); render();
+    });
+    document.addEventListener('click', function(e){
+      if(!els.root.contains(e.target)) hideBubble();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') hideBubble();
+    });
+  }
+
+  // Small style injected for the one-off "pop" bounce triggered on activity,
+  // kept separate from the idle/tier animations defined in the CSS block.
+  var popStyle = document.createElement('style');
+  popStyle.textContent = '@keyframes cc-pop{0%{transform:scale(1);}30%{transform:scale(1.18);}55%{transform:scale(.94);}100%{transform:scale(1);}} #cc-pet-btn.cc-pop{animation:cc-pop .55s ease;}';
+  document.head.appendChild(popStyle);
+
+  /* ---------- Hook into existing MindBloom wellness actions ----------
+     We do not edit MindBloom.saveMood / saveJournal / logActivity.
+     We wrap each one: the original runs first with its original
+     behavior fully intact, then we react to it. */
+  function hookMindBloom(){
+    if(!window.MindBloom) return false;
+    var MB = window.MindBloom;
+
+    if(typeof MB.saveMood === 'function' && !MB.saveMood.__ccWrapped){
+      var origSaveMood = MB.saveMood;
+      MB.saveMood = function(){
+        var result = origSaveMood.apply(MB, arguments);
+        boostHappiness();
+        return result;
+      };
+      MB.saveMood.__ccWrapped = true;
+    }
+
+    if(typeof MB.saveJournal === 'function' && !MB.saveJournal.__ccWrapped){
+      var origSaveJournal = MB.saveJournal;
+      MB.saveJournal = function(){
+        var result = origSaveJournal.apply(MB, arguments);
+        boostHappiness();
+        return result;
+      };
+      MB.saveJournal.__ccWrapped = true;
+    }
+
+    if(typeof MB.logActivity === 'function' && !MB.logActivity.__ccWrapped){
+      var origLogActivity = MB.logActivity;
+      MB.logActivity = function(){
+        var result = origLogActivity.apply(MB, arguments);
+        boostHappiness();
+        return result;
+      };
+      MB.logActivity.__ccWrapped = true;
+    }
+    return true;
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    initWidget();
+    hookMindBloom();
+  });
+})();
+</script>
+
+
+
+<!-- ============================================================
+     Team info footer — new, self-contained addition.
+     Scoped styles below only target .mm-team-footer* classes,
+     so nothing existing on the page is affected.
+     ============================================================ -->
+<style>
+.mm-team-footer{
+  font-family: var(--font-body);
+  color: var(--ink-purple);
+  background: var(--cream2);
+  border-top: 1px solid rgba(61,44,107,0.12);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  margin-top: var(--space-6);
+  padding: var(--space-4) var(--space-3);
+  text-align: center;
+  transition: background .4s ease, color .4s ease;
+}
+.mm-team-footer .mm-team-footer-inner{
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mm-team-footer .mm-team-footer-brand{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink-magenta);
+  margin-bottom: 4px;
+}
+.mm-team-footer p{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: .9;
+}
+.mm-team-footer strong{
+  font-weight: 700;
+  color: var(--ink-purple);
+}
+</style>
+<footer class="mm-team-footer" aria-label="Project team information">
+  <div class="mm-team-footer-inner">
+    <p class="mm-team-footer-brand">🌸 Mental Marvels</p>
+    <p><strong>Team Name:</strong> Team SAM</p>
+    <p><strong>Team Members:</strong> Mannat, Siddid, Aditya</p>
+    <p><strong>Problem Statement:</strong> Mental Wellness Companion Dashboard</p>
+  </div>
+</footer>
+
+</body>
+</html>
